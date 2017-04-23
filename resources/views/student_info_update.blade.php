@@ -1,18 +1,23 @@
-{!! Form::open(['url'=> 'create_student']) !!}
+{{ print_r($student) }}
 
-	{!! Form::label('Name') !!}
-	{!! Form::text('name', '') !!}
+<!-- {!! Form::model($student, [
+    'method' => 'PATCH',
+    'route' => []
+]) !!} -->
+
+<!-- 	{!! Form::label('Name') !!}
+	{!! Form::text('name', null) !!}
 	{{ $errors->first('name') }}
 
 	{!! Form::label('Email') !!}
-	{!! Form::email('email', '') !!}
-
-	{!! Form::label('Password') !!}
+	{!! Form::email('email', null) !!}
+ -->
+<!-- 	{!! Form::label('Password') !!}
 	{!! Form::password('password', '') !!}
-	
+	 -->
 	<!-- {!! Form::label('Date Of Bitrh') !!}
 	{!! Form::date('date_of_birth') !!} -->
-
+<!-- 
 	{!! Form::label('Language') !!}
 
 	{!! Form::label('PHP') !!}
@@ -31,7 +36,7 @@
 	{!! Form::select('std_class', ['0'=>'SelectHere','1'=>'One', '2'=>'Two', '3'=>'Three']) !!}
 
 	{!! Form::label('Note') !!}
-	{!! Form::textarea('note', '') !!}
+	{!! Form::textarea('note', '') !!} -->
 	
 	{!! Form::submit('Save Now') !!}
 

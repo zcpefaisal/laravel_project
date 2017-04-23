@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/student', 'Student@create');
 Route::post('/create_student', 'Student@store');
+Route::get('index','Student@index');
+Route::get('edit/{id}','Student@edit');

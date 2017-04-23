@@ -18,6 +18,8 @@ class Student extends Controller
     public function index()
     {
         //
+        $data['students']=Student_info::all();
+        return view('index',$data);
     }
 
     /**
@@ -44,11 +46,12 @@ class Student extends Controller
         $student->name  = $request->name;
         $student->email  = $request->email;
         $student->password  = $request->password;
-        // $student->language  = $request->language;
-        // $student->gander  = $request->gander;
-        // $student->std_class  = $request->std_class;
+        $student->language  = implode(',',$request->language);
+        $student->gander  = $request->gander;
+        $student->std_class  = $request->std_class;
         $student->note  = $request->note;
         $student->save();
+        // print_r($request->language);
     }
 
     /**
@@ -70,7 +73,12 @@ class Student extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['student']=Student_info::findOrfail($id);
+        echo '<pre>';
+        print_r($data['student']);
+        echo '</pre>';
+        // return view('student_info_update',$data);
+
     }
 
     /**
